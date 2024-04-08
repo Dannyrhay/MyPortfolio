@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mediaqueries.">
+    <link rel="stylesheet" href="light-mode.css" id="theme-style">
+    <link rel="stylesheet" href="dark-mode.css" id="theme-style">
+    <title>Daniel Oppong-Boah | Frontend Developer</title>
+</head>
+<body>
+    <nav id="desktop-nav">
+     
+     <div>
+            <a href="#about" class="logo">DOB</a>
+        </div>
+        <ul >
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    
+    </nav>
+
+    <nav id="hamburger-nav">
+        <div>
+            <a href="#about" class="logo">DOB</a>
+        </div>
+        <div class="hamburger-menu">
+            <div class="hamburger-icon" onclick="toggleMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <div class="menu-links">
+                <a href="#about" onclick="toggleMenu()">About Me</a>
+                <a href="#skills" onclick="toggleMenu()">Skills</a>
+                <a href="#projects" onclick="toggleMenu()">Projects</a>
+                <a href="#contact" onclick="toggleMenu()">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div id="profile">
+            <div class="profile-image-container">
+                <img src="Asserts/my image.png" alt="Daniel Oppong-Boah" class="profile-image">
+            </div>
+        </div>
+        <div class="section__text">
+            <h2>Welcome to My Portfolio</h2>
+            <p>I'm passionate about creating interactive and visually appealing web experiences.</p>
+            <div class="btn-container">
+                <button class="btn btn-color-2" onclick="window.open('./Asserts/Updated CV - Daniel Oppong (1).pdf')">
+                    Download CV
+                </button>
+            </div>
+
+            <button class="btn btn-color-1" onclick="window.location.href = '#contact'">
+                Contact
+            </button>          
+        </div>
+        
+        <div id="socials-container">
+            <img src="Asserts/linkedin.png" alt="My Linkedin Profile" class="icon" onclick="location.href= 'https://Linkedin.com/'">
+            <img src="Asserts/github.png" alt="My GitHub Profile" class="icon" onclick="location.href= 'https://GitHub.com/'">
+            <img src="Asserts/email.png" alt="My Gmail" class="icon" onclick="location.href= 'https://Gmail.com/'">
+        </div>
+    </header>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <p>Hi, I'm Daniel Oppong-Boah, a frontend developer with a strong foundation in Python, HTML, CSS, Tailwind CSS, and JavaScript. I enjoy turning ideas into beautiful, interactive, and user-friendly websites.</p>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2>Skills</h2>
+            <ul>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>Tailwind CSS</li>
+                <li>Python</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Projects</h2>
+            </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Contact Me</h2>
+            <p>Let's connect! Feel free to reach out to me through the following channels:</p>
+            </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Daniel Oppong-Boah. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script
+        type="module"
+        src="https://cdn.jsdelivr.net/npm/@bufferhead/nightowl@0.0.14/dist/nightowl.js">
+    </script>
+
+    <script src="script.js"></script>
+</body>
+</html>
