@@ -92,6 +92,7 @@ a:hover {
   height: 2px;
   background-color: black;
   transition: all 0.3 ease-in-out;
+  justify-content: center;
 }
 
 .menu-links {
@@ -188,6 +189,7 @@ section {
 
 .section__text__p1 {
   text-align: center;
+  margin-top: auto;
 }
 
 .section__text__p2 {

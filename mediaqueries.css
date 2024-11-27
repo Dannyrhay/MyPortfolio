@@ -43,14 +43,14 @@
     margin: 0 auto 2rem;
   }
   .about-containers {
-    margin-top: 0;
+    margin-top: 5;
   }
 }
 
 @media screen and (max-width: 600px) {
   #contact,
   footer {
-    height: 40vh;
+    height: 25vh;
   }
   #profile {
     height: 83vh;
