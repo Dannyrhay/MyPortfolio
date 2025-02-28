@@ -18,6 +18,10 @@ html {
 
 p {
   color: rgb(85, 85, 85);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 10px;
 }
 
 /* TRANSITION */
@@ -152,7 +156,7 @@ a:hover {
 
 section {
   padding-top: 4vh;
-  height: 96vh;
+  height: auto;
   margin: 0 10rem;
   box-sizing: border-box;
   min-height: fit-content;
@@ -268,6 +272,7 @@ section {
 
 #about {
   position: relative;
+  margin-top: 30px;
 }
 
 .about-containers {
@@ -365,12 +370,23 @@ article .icon {
 .color-container {
   border-color: rgb(163, 163, 163);
   background: rgb(250, 250, 250);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.color-container:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
 .project-img {
   border-radius: 2rem;
   width: 90%;
   height: 90%;
+  transition: transform 0.3s ease;
+}
+
+.color-container:hover .project-img {
+  transform: scale(1.05);
 }
 
 .project-title {
@@ -381,6 +397,13 @@ article .icon {
 .project-btn {
   color: black;
   border-color: rgb(163, 163, 163);
+  transition: all 0.3s ease;
+}
+
+.project-btn:hover {
+  background: rgb(53, 53, 53);
+  color: white;
+  transform: translateY(-2px);
 }
 
 /* CONTACT */
@@ -398,7 +421,6 @@ article .icon {
   border-radius: 2rem;
   border: rgb(53, 53, 53) 0.1rem solid;
   border-color: rgb(163, 163, 163);
-  background: (250, 250, 250);
   margin: 2rem auto;
   padding: 0.5rem;
 }
@@ -408,15 +430,33 @@ article .icon {
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  margin: 1rem;
+  transition: transform 0.3s ease;
+}
+
+.contact-info-container:hover {
+  transform: translateY(-5px);
+  color: rgb(85, 85, 85);
 }
 
 .contact-info-container p {
   font-size: larger;
+  margin: 0;
+}
+
+.contact-info-container a {
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.3s ease;
 }
 
 .contact-icon {
-  cursor: default;
+  cursor: pointer;
+  height: 2rem;
+  transition: transform 0.3s ease;
+}
+
+.contact-info-container:hover .contact-icon {
+  transform: scale(1.1);
 }
 
 .email-icon {
@@ -426,10 +466,237 @@ article .icon {
 /* FOOTER SECTION */
 
 footer {
-  height: 26vh;
+  height: auto;
   margin: 0 1rem;
 }
 
 footer p {
   text-align: center;
 }
+
+/* ABOUT SECTION STYLING*/
+#about.new-about {
+  padding: 4rem 10%;
+  background-color: var(--bg-color);
+  position: relative;
+  margin: 0 auto;
+  min-height: 96vh;
+}
+
+#about.new-about .title {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  color: var(--text-color);
+}
+
+#about.new-about .subtitle {
+  font-size: 1.2rem;
+  color: rgb(85, 85, 85);
+  margin-bottom: 3rem;
+}
+
+.about-card {
+  background: white;
+  border-radius: 1rem;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 40%;
+}
+
+.profile-info .profile-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.profile-info h2 {
+  font-size: 1.8rem;
+  margin: 0;
+  text-align: center;
+}
+
+.profile-info .username {
+  color: rgb(85, 85, 85);
+  font-size:0.7rem;
+  margin: 0;
+}
+
+.projects-button {
+  background: #e0e0e0;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  border-radius: 2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.projects-button:hover {
+  background: #d0d0d0;
+}
+
+.github-link {
+  margin-top: 1rem;
+}
+
+.github-icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.map-container {
+  width: 55%;
+}
+
+.map-container p{
+  font-style: italic;
+  text-align: center;
+}
+
+.content-cards {
+  display: flex;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+.cv-card, .video-card {
+  flex: 1;
+  background: #000;
+  color: white;
+  padding: 2rem;
+  border-radius: 1rem;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.cv-card:hover, .video-card:hover {
+  transform: translateY(-5px);
+}
+
+.cv-card h3, .video-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.cv-card p, .video-card p {
+  color: #a0a0a0;
+  margin-bottom: 1.5rem;
+}
+.cv-preview-img{
+  width: 30vw;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 0.5rem;
+}
+.video-preview {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+/* Preserve original arrow styling */
+#about .arrow {
+  position: absolute;
+  right: -5rem;
+  bottom: 2.5rem;
+}
+
+/* Scroll Animation Styles */
+.hidden {
+    opacity: 0;
+    filter: blur(2px);
+    transform: translateY(50%);
+    transition: all 0.5s;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+/* Faster delays between elements */
+.hidden:nth-child(2) {
+    transition-delay: 100ms;
+}
+.hidden:nth-child(3) {
+    transition-delay: 200ms;
+}
+.hidden:nth-child(4) {
+    transition-delay: 300ms;
+}
+
+/* TESTIMONIALS SECTION */
+#testimonials {
+  position: relative;
+  padding: 4rem 10%;
+  text-align: center;
+  min-height: auto;
+
+}
+
+.testimonials-container {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin: 3rem auto;
+  flex-wrap: nowrap;
+  max-width: 1400px;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 2rem;
+  border: rgb(53, 53, 53) 0.1rem solid;
+  border-color: rgb(163, 163, 163);
+  padding: 2rem;
+  width: calc(50% - 2rem);
+  max-width: 500px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+}
+
+.testimonial-img {
+  width: 130px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+
+.testimonial-text {
+  color: rgb(85, 85, 85);
+  font-style: italic;
+  margin: 1rem 0;
+  line-height: 1.6;
+}
+
+.client-info h3 {
+  color: var(--text-color);
+  margin-bottom: 0.5rem;
+}
+
+.client-info p {
+  color: rgb(85, 85, 85);
+  font-size: 0.9rem;
+}
+

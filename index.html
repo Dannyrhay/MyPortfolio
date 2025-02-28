@@ -4,132 +4,124 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>My Portfolio Site</title>
-    <link rel="stylesheet" href="styles.css" />
-    <link rel="stylesheet" href="mediaqueries.css" />
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./mediaqueries.css" />
     <link href="Asserts/icons8-portfolio-32.png" rel="icon">
   </head>
   <body>
 
-    <nav id="desktop-nav">
-      <div class="logo">DOB</div>
+    <nav id="desktop-nav" aria-label="Desktop navigation menu">
+      <div class="logo" aria-level="1">DOB</div>
       <div>
         <ul class="nav-links">
-          <li><a href="#about">About</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#projects">Projects</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="#about" role="menuitem">About</a></li>
+          <li><a href="#experience" role="menuitem">Skills</a></li>
+          <li><a href="#projects" role="menuitem">Projects</a></li>
+          <li><a href="#contact" role="menuitem">Contact</a></li>
         </ul>
       </div>
     </nav>
-    <nav id="hamburger-nav">
-      <div class="logo">DOB</div>
-      <div class="hamburger-menu">
-        <div class="hamburger-icon" onclick="toggleMenu()">
-          <span></span>
-          <span></span>
-          <span></span>
-        </div>
-        <div class="menu-links">
-          <li><a href="#about" onclick="toggleMenu()">About</a></li>
-          <li><a href="#experience" onclick="toggleMenu()">Experience</a></li>
-          <li><a href="#projects" onclick="toggleMenu()">Projects</a></li>
-          <li><a href="#contact" onclick="toggleMenu()">Contact</a></li>
+    <nav id="hamburger-nav" aria-label="Mobile navigation menu">
+      <div class="logo" aria-level="1">DOB</div>
+      <div class="nav-controls">
+        <night-owl class="theme-toggle"></night-owl>
+        <div class="hamburger-menu">
+          <button class="hamburger-icon" onclick="toggleMenu()" aria-expanded="false" aria-controls="menu-links" aria-label="Menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+          <ul id="menu-links" class="menu-links">
+            <li><a href="#about" onclick="toggleMenu()" role="menuitem">About</a></li>
+            <li><a href="#experience" onclick="toggleMenu()" role="menuitem">Experience</a></li>
+            <li><a href="#projects" onclick="toggleMenu()" role="menuitem">Projects</a></li>
+            <li><a href="#contact" onclick="toggleMenu()" role="menuitem">Contact</a></li>
+          </ul>
         </div>
       </div>
     </nav>
     <section id="profile">
       <div class="section__pic-container">
-        <img src="./Asserts/my image.png" alt="Daniel's Profile Picture"/>
+        <img src="./Asserts/pic1.jpg" alt="Profile"/>
       </div>
       <div class="section__text">
         <p class="section__text__p1">Hello, I'm</p>
         <h1 class="title">Daniel Oppong-Boah</h1>
-        <p class="section__text__p2">Software/Frontend Developer</p>
+        <p class="section__text__p2">Software Developer</p>
         <div class="btn-container">
-          <button
-            class="btn btn-color-2"
-            onclick="window.open('./Asserts/CV_Daniel Oppong-Boah.pdf')">
-            Download CV
-          </button>
-          <button class="btn btn-color-1" onclick="window.location.href = '#contact'">
+
+          <button class="btn btn-color-2" onclick="window.location.href = '#contact'">
             Contact
           </button>
         </div>
         <div id="socials-container">
-          <img
-            src="./Asserts/linkedin.png"
-            alt="My LinkedIn profile"
-            class="icon"
-            onclick="location.href='https:www.linkedin.com/in/daniel-oppong-371b68202'"
-          />
-          <img
-            src="./Asserts/github.png"
-            alt="My Github profile"
-            class="icon"
-            onclick="location.href='https:www.github.com/Dannyrhay'"
-          />
+          <a href="https://www.linkedin.com/in/daniel-oppong-boah-371b68202" target="_blank">
+            <img
+              src="./Asserts/linkedin.png"
+              alt="LinkedIn Profile"
+              class="icon"
+            />
+          </a>
+          <a href="https://github.com/Dannyrhay?tab=repositories" target="_blank">
+            <img
+              src="./Asserts/github.png"
+              alt="GitHub Profile"
+              class="icon"
+            />
+          </a>
         </div>
       </div>
     </section>
     <section id="about">
-      <p class="section__text__p1">Get To Know More</p>
-      <h1 class="title">About Me</h1> <br>
-      <div class="section-container">
-        <div class="section__pic-container">
-          <img
-            src="./Asserts/my image.png"
-            alt="Profile"
-            class="about-pic"
-          />
+      <h1 class="title">About me</h1>
+      <p class="subtitle">Here you can find a little bit about me. I am a passionate designer and developer!</p>
+
+      <div class="about-card hidden">
+        <div class="profile-info">
+          <img src="./Asserts/my image.png" alt="Profile" class="profile-img">
+          <h2>Daniel Oppong-Boah</h2>
+          <p class="username">Software Developer</p>
+          <button class="projects-button">public projects</button>
+          <a href="https://github.com/Dannyrhay" target="_blank" class="github-link">
+            <img src="./Asserts/github.png" alt="GitHub Profile" class="github-icon"/>
+          </a>
         </div>
-        <div class="about-details-container">
-          <div class="about-containers">
-            <div class="details-container">
-              <img
-                src="./Asserts/experience.png"
-                alt="Experience icon"
-                class="icon"
-              />
-              <h3>Experience</h3>
-              <p>3+ years <br />Frontend and Backend Development</p>
-            </div>
-            <div class="details-container">
-              <img
-                src="./Asserts/education.png"
-                alt="Education icon"
-                class="icon"
-              />
-              <h3>Education</h3>
-              <p>B.Sc. Bachelors Degree in Computer Engineering</p>
-            </div>
-          </div>
-          <div class="text-container">
-            <p>
-              I'm a driven and innovative Computer Engineering graduate with a passion for excellence in technology. <br>
-              With a solid foundation in computer engineering and hands-on experience in frontend development,
-              I bring a comprehensive skill set and unwavering commitment to shaping the tech landscape.
-              I excel at delivering innovative solutions to real-world challenges and fostering a culture of continuous learning. Currently, I'm expanding my expertise in backend development to become a versatile full-stack developer.
-            </p>
-          </div>
+        <div class="map-container">
+          <p>I'm a driven and innovative Computer Engineering graduate with a passion for excellence in technology.
+            With a solid foundation in computer engineering and hands-on experience in frontend development, I bring a comprehensive skill set and unwavering commitment to shaping the tech landscape. I excel at delivering innovative solutions to real-world challenges and fostering a culture of continuous learning. Currently, I'm expanding my expertise in backend development to become a versatile full-stack developer.
+          </p>
         </div>
       </div>
+
+      <div class="content-cards">
+        <div class="cv-card hidden">
+          <h3>My Curriculum Vitae</h3>
+          <p>Hover to download</p>
+          <img src="./Asserts/CV icon.gif" alt="CV Preview" class="cv-preview-img">
+        </div>
+        <div class="video-card hidden">
+          <h3>Also a Researcher <br> & <br> Graphic Designer</h3>
+          <p>Check out my projects</p>
+          <a href=""><img src="./Asserts/project2.png" alt="Project Preview" class="video-preview"></a>
+        </div>
+      </div>
+
       <img
-        src="./Asserts/arrow.png"
-        alt="Arrow icon"
-        class="icon arrow"
-        onclick="window.location.href = '#experience'">
-
-
+      src="./Asserts/arrow.png"
+      alt="Arrow icon"
+      class="icon arrow"
+      onclick="window.location.href = '#experience'"
+      />
     </section>
     <section id="experience">
       <br>
       <br>
       <p class="section__text__p1">Explore My</p>
-      <h1 class="title">Experience</h1>
+      <h1 class="title">Skills</h1>
       <div class="experience-details-container">
         <div class="about-containers">
-          <div class="details-container">
+          <div class="details-container hidden">
             <h2 class="experience-sub-title">Frontend Development</h2>
             <div class="article-container">
               <article>
@@ -140,7 +132,7 @@
                 />
                 <div>
                   <h3>HTML</h3>
-                  <p>Intermediate</p>
+
                 </div>
               </article>
               <article>
@@ -151,7 +143,7 @@
                 />
                 <div>
                   <h3>CSS</h3>
-                  <p>Intermediate</p>
+
                 </div>
               </article>
               <article>
@@ -162,7 +154,7 @@
                 />
                 <div>
                   <h3>Tailwind Css</h3>
-                  <p>Intermediate</p>
+
                 </div>
               </article>
               <article>
@@ -173,7 +165,7 @@
                 />
                 <div>
                   <h3>JavaScript</h3>
-                  <p>Basic</p>
+
                 </div>
               </article>
               <article>
@@ -184,7 +176,7 @@
                 />
                 <div>
                   <h3>Python</h3>
-                  <p>Basic</p>
+
                 </div>
               </article>
               <article>
@@ -195,12 +187,12 @@
                 />
                 <div>
                   <h3>Bootstrap</h3>
-                  <p>Intermediate</p>
+
                 </div>
               </article>
             </div>
           </div>
-          <div class="details-container">
+          <div class="details-container hidden">
             <h2 class="experience-sub-title">Other Experiences </h2>
             <div class="article-container">
               <article>
@@ -211,7 +203,7 @@
                 />
                 <div>
                   <h3>MongoDB</h3>
-                  <p>Basic</p>
+
                 </div>
               </article>
               <article>
@@ -222,7 +214,7 @@
                 />
                 <div>
                   <h3>Visual Basic</h3>
-                  <p>Basic</p>
+
                 </div>
               </article>
               <article>
@@ -233,7 +225,7 @@
                 />
                 <div>
                   <h3>Django</h3>
-                  <p>Basic</p>
+
                 </div>
               </article>
               <article>
@@ -243,8 +235,8 @@
                   class="icon"
                 />
                 <div>
-                  <h3>Git</h3>
-                  <p>Intermediate</p>
+                  <h3>Git & GitHub</h3>
+
                 </div>
               </article>
               <article>
@@ -255,7 +247,7 @@
                 />
                 <div>
                   <h3>Node.js</h3>
-                  <p>Basic</p>
+
                 </div>
               </article>
               <article>
@@ -266,7 +258,7 @@
                 />
                 <div>
                   <h3>Photoshop</h3>
-                  <p>Intermediate</p>
+
                 </div>
               </article>
             </div>
@@ -277,16 +269,15 @@
         src="./Asserts/arrow.png"
         alt="Arrow icon"
         class="icon arrow"
-        onclick="window.location.href = '#projects'">
-
-
+        onclick="window.location.href = '#projects'"
+      />
     </section>
     <section id="projects">
       <p class="section__text__p1">Browse My Recent</p>
       <h1 class="title">Projects</h1>
       <div class="experience-details-container">
         <div class="about-containers">
-          <div class="details-container color-container">
+          <div class="details-container color-container hidden">
             <div class="article-container">
               <img
                 src="./Asserts/project1.png"
@@ -294,23 +285,21 @@
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Project One</h2>
+            <h2 class="experience-sub-title project-title">Epic-Pixel HuB</h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Dannyrhay/Dannyrhay.github.io'"
-              >
+                onclick="location.href='https://github.com/Dannyrhay/Dannyrhay.github.io'">
                 Github
               </button>
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://dannyrhay.github.io'"
-              >
+                onclick="location.href='https://dannyrhay.github.io'">
                 Live Demo
               </button>
             </div>
           </div>
-          <div class="details-container color-container">
+          <div class="details-container color-container hidden">
             <div class="article-container">
               <img
                 src="./Asserts/project2.png"
@@ -318,23 +307,21 @@
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Project Two</h2>
+            <h2 class="experience-sub-title project-title">Wedding Website</h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Dannyrhay/michaelandgyemfuah.github.io'"
-              >
+                onclick="location.href='https://github.com/Dannyrhay/michaelandgyemfuah.github.io'">
                 Github
               </button>
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://michaelandgyemfuah.com'"
-              >
+                onclick="location.href='https://michaelandgyemfuah.com'">
                 Live Demo
               </button>
             </div>
           </div>
-          <div class="details-container color-container">
+          <div class="details-container color-container hidden">
             <div class="article-container">
               <img
                 src="./Asserts/project3.png"
@@ -342,18 +329,60 @@
                 class="project-img"
               />
             </div>
-            <h2 class="experience-sub-title project-title">Project Three</h2>
+            <h2 class="experience-sub-title project-title">WEB SCRAPING TOOL SPIKE</h2>
             <div class="btn-container">
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Dannyrhay/WEB-SCRAPING-TOOL-SPIKE'"
-              >
+                onclick="location.href='https://github.com/Dannyrhay/WEB-SCRAPING-TOOL-SPIKE'">
                 Github
               </button>
               <button
                 class="btn btn-color-2 project-btn"
-                onclick="location.href='https://github.com/Dannyrhay/WEB-SCRAPING-TOOL-SPIKE'"
-              >
+                onclick="location.href='https://github.com/Dannyrhay/WEB-SCRAPING-TOOL-SPIKE'">
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container hidden">
+            <div class="article-container">
+              <img
+                src="./Asserts/NewsDetectorApp.png"
+                alt="Project 4"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">News Detector</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/Dannyrhay/NewsDetectorApp.github.io'">
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https:'">
+                Live Demo
+              </button>
+            </div>
+          </div>
+          <div class="details-container color-container hidden">
+            <div class="article-container">
+              <img
+                src="./Asserts/sc1.png"
+                alt="Project 5"
+                class="project-img"
+              />
+            </div>
+            <h2 class="experience-sub-title project-title">AutoDan</h2>
+            <div class="btn-container">
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://github.com/DanielXcelsz/AutoDan.github.io'">
+                Github
+              </button>
+              <button
+                class="btn btn-color-2 project-btn"
+                onclick="location.href='https://danielxcelsz.github.io/AutoDan.github.io/'">
                 Live Demo
               </button>
             </div>
@@ -364,25 +393,49 @@
         src="./Asserts/arrow.png"
         alt="Arrow icon"
         class="icon arrow"
-        onclick="window.location.href = '#contact'"/>
+        onclick="window.location.href = '#contact'"
+      />
+    </section>
+    <section id="testimonials">
+      <p class="section__text__p1">What Clients Say</p>
+      <h1 class="title">Testimonials</h1>
 
+      <div class="testimonials-container">
+        <div class="testimonial-card hidden">
+          <img src="./Asserts/testimonials .jpg" alt="Client" class="testimonial-img">
+          <p class="testimonial-text">
+            "Daniel is an exceptional developer who delivered our project on time and exceeded our expectations. His attention to detail and problem-solving skills are remarkable."
+          </p>
+          <div class="client-info">
+            <h3>Mr & Mrs Apkawu</h3>
+            <p></p>
+          </div>
+        </div>
+      </div>
+
+      <img
+        src="./Asserts/arrow.png"
+        alt="Arrow icon"
+        class="icon arrow"
+        onclick="window.location.href = '#contact'"
+      />
     </section>
     <section id="contact">
       <p class="section__text__p1">Get in Touch</p>
       <h1 class="title">Contact Me</h1>
       <div class="contact-info-upper-container">
-        <div class="contact-info-container">
+        <div class="contact-info-container hidden">
           <img
             src="./Asserts/email.png"
-            alt="Email icon"
+            alt="Email"
             class="icon contact-icon email-icon"
           />
-          <p><a href="mailto:Danieloppong757@gmail.com">G-mail</a></p>
+          <p><a href="mailto:Danieloppong757@gmail.com">G-mail</a></p> <br>
         </div>
-        <div class="contact-info-container">
+        <div class="contact-info-container hidden">
           <img
             src="./Asserts/linkedin.png"
-            alt="LinkedIn icon"
+            alt="LinkedIn"
             class="icon contact-icon"
           />
           <p><a href="https://www.linkedin.com/in/daniel-oppong-371b68202">LinkedIn</a></p>
@@ -396,12 +449,8 @@
 
     <script src="script.js"></script>
     <script
-      type="module"
-      src="https://cdn.jsdelivr.net/npm/@bufferhead/nightowl@0.0.14/dist/nightowl.js">
-    </script>
-
-
-
-
+    type="module"
+    src="https://cdn.jsdelivr.net/npm/@bufferhead/nightowl@0.0.14/dist/nightowl.js"
+    ></script>
   </body>
 </html>

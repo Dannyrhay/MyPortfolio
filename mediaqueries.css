@@ -1,6 +1,6 @@
 @media screen and (max-width: 1400px) {
   #profile {
-    height: 83vh;
+    height: 100%;
     margin-bottom: 6rem;
   }
   .about-containers {
@@ -48,12 +48,19 @@
 }
 
 @media screen and (max-width: 600px) {
+  .cv-preview-img {
+    width: 75vw;
+    height: 200px;
+    object-fit: contain;
+    border-radius: 0.5rem;
+}
+
   #contact,
   footer {
-    height: 25vh;
+    height: auto;
   }
   #profile {
-    height: 83vh;
+    height: 50vh;
     margin-bottom: 0;
   }
   article {
@@ -98,6 +105,70 @@
     font-size: 2rem;
   }
   .text-container {
-    text-align: justify;
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .about-card {
+    flex-direction: column;
+  }
+
+  .profile-info, .map-container {
+    width: 100%;
+  }
+
+  .content-cards {
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #about.new-about {
+    padding: 4rem 5%;
+  }
+
+  #about.new-about .title {
+    font-size: 2.5rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .testimonials-container {
+    flex-wrap: wrap;
+  }
+
+  .testimonial-card {
+    width: calc(50% - 1rem);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #testimonials {
+    padding: 4rem 5%;
+  }
+
+  .testimonial-card {
+    width: 100%;
+    margin-bottom: 1rem;
+  }
+}
+@media screen and (max-width: 1200px) {
+  .testimonials-container {
+    flex-wrap: wrap;
+  }
+
+  .testimonial-card {
+    width: calc(50% - 1rem);
+  }
+}
+
+@media screen and (max-width: 768px) {
+  #testimonials {
+    padding: 4rem 5%;
+  }
+
+  .testimonial-card {
+    width: 100%;
+    margin-bottom: 1rem;
   }
 }
