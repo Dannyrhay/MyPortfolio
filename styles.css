@@ -156,7 +156,7 @@ a:hover {
 
 section {
   padding-top: 4vh;
-  height: auto;
+  height: 100%;
   margin: 0 10rem;
   box-sizing: border-box;
   min-height: fit-content;
@@ -412,7 +412,6 @@ article .icon {
   display: flex;
   justify-content: center;
   flex-direction: column;
-  height: 70vh;
 }
 
 .contact-info-upper-container {
@@ -644,7 +643,7 @@ footer p {
 /* TESTIMONIALS SECTION */
 #testimonials {
   position: relative;
-  padding: 4rem 10%;
+  padding: 5rem 10%;
   text-align: center;
   min-height: auto;
 
